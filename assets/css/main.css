@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: pink;
+}
+h1 {
+  text-align: center;
+}
+.slider-container {
+  border: 10px solid #FFFFFF;
+  position: relative;
+  background-color: gray;
+  left: 20%;
+  /*overflow: hidden;*/
+  width: 60%;
+}
+#slider {
+  display: flex;
+  width: 500%;
+}
+#slider div {
+  width: 100%;
+}
+#slider div img{
+  height: 100%;
+  width: 100%;
+}
+.manual-buttons1 {
+  top: 200px;
+  position: absolute;
+}
+.btn {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 2rem;
+  border: 0;
+  border-radius: 50%;
+}
+#btn-previous:hover, #btn-next:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
