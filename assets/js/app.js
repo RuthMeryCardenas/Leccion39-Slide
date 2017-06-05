@@ -2,6 +2,8 @@
 var slider = $("#slider");
 var next_btn = $("#btn-next");
 var previous_btn = $("#btn-previous");
+var menu_btn = $(".manual-buttons2 .btn");
+var image_counter = 0;//Contador de imágenes
 //FUNCIONES
 var moveDivLeft = function (element) {
     element.css("margin-left", "-" + 100 + "%");
@@ -28,5 +30,8 @@ previous_btn.on("click", previousImage);
 //Inicializando el Slider
 moveImgForward();
 //Reproducción Automática del Slider
-var autoPlay = setInterval(nextImage, 5000);
+var autoPlay = setInterval(function () {
+  nextImage();
+  // image_counter = (image_counter + 1) % 5;//Aumentando el contador de imágenes
+}, 5000);
 $(document).ready(autoPlay);
