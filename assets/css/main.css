@@ -4,17 +4,25 @@
   box-sizing: border-box;
 }
 body {
-  background-color: pink;
+  background-image: url(../img/fondo2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 h1 {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 50px 0;
+  padding: 25px 0;
   text-align: center;
 }
+.main-container {
+}
 .slider-container {
-  border: 10px solid #FFFFFF;
-  position: relative;
-  background-color: gray;
+  box-shadow: 0 0 0 10px #FFFFFF,
+              0 15px 50px;
   left: 20%;
-  /*overflow: hidden;*/
+  overflow: hidden;
+  position: relative;
   width: 60%;
 }
 #slider {
@@ -29,14 +37,21 @@ h1 {
   width: 100%;
 }
 .manual-buttons1 {
-  top: 200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
   position: absolute;
+  top: 50%;
+  width: 100%;
 }
 .btn {
   background-color: rgba(255, 255, 255, 0.7);
-  font-size: 2rem;
   border: 0;
   border-radius: 50%;
+  display: block;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
 }
 #btn-previous:hover, #btn-next:hover {
   background-color: rgba(255, 255, 255, 1);

@@ -1,24 +1,32 @@
+//VARIABLES GLOBALES
 var slider = $("#slider");
 var next_btn = $("#btn-next");
 var previous_btn = $("#btn-previous");
-//inicializando las imágenes
-$("#slider div:last").insertBefore("#slider div:first");
-slider.css("margin-left", "-" + 100 + "%");
-// funciona hasta aqui
+//FUNCIONES
+var moveDivLeft = function (element) {
+    element.css("margin-left", "-" + 100 + "%");
+}
+var moveImgForward = function () {
+  $("#slider div:last").insertBefore("#slider div:first");
+  moveDivLeft(slider);
+}
+var moveImgBack = function () {
+  $("#slider div:first").insertAfter("#slider div:last");
+  moveDivLeft(slider);
+}
 function nextImage() {
   slider.animate({'margin-left': "-" + 200 + "%"},
-                  700, function () {
-                  $("#slider div:first").insertAfter("#slider div:last");
-                  slider.css("margin-left", "-" + 100 + "%");
-                });
+                  1500, moveImgBack);
 }
 function previousImage() {
-
+  slider.animate({'margin-left': 0},
+                  1500, moveImgForward);
 }
-next_btn.on("click", function () {
-  nextImage();
-  console.log("hola");
-});
-previous_btn.on("click", function () {
-  previousImage()
-});
+//EVENTOS
+next_btn.on("click", nextImage);
+previous_btn.on("click", previousImage);
+//Inicializando el Slider
+moveImgForward();
+//Reproducción Automática del Slider
+var autoPlay = setInterval(nextImage, 5000);
+$(document).ready(autoPlay);
